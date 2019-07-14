@@ -1,0 +1,57 @@
+<div class="container">
+        
+    <div class="row profile-content border-bottom col-12">
+        
+        <div class="icon col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+            <img class="profile-avatar" src="/images/default_profile.png"/>
+        </div>
+
+        <div class="caption col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h1 class="profile-name-heading display-4"> {{ profile }} </h1>
+            <p class="profile-bio-heading display-6"> {{ bio }} </p>
+        </div>
+
+        
+        <a class="edit-profile-btn bg-light text-dark ml-auto my-auto" ng-click="$root.openModal('#modal_edit_profile')" style="cursor:pointer;"> Edit Profile </a>
+        
+
+    </div>
+
+    <section class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4" ng-repeat="item in profileItems">
+            <div class="feed-items">
+                <img src="{{ item.image }}"/>
+            </div>
+        </div>
+    </section>
+        
+</div>
+
+<div class="modal fade" id="modal_edit_profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+            <form ng-submit="editProfile(newInfo)">
+                <div class="form-group col-12 col-md-12 col-lg-12">
+                    <h6 class="exampleFormControlInput1">Username</h6>
+                    <input type="text" name="username" ng-model="username" class="form-control" id="exampleFormControlInput1" placeholder="{{profile}}">
+                </div>
+                <div class="form-group col-12 col-md-12 col-lg-12">
+                    <h6 class="exampleFormControlInput1">Bio</h6>
+                    <input type="text" name="bio" ng-model="bio" class="form-control" id="exampleFormControlInput1" placeholder="{{bio}}">
+                </div>
+
+                <div class="row login-btn">
+                    <button class="bg-primary text-light" type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>

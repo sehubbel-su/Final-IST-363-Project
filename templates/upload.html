@@ -1,0 +1,31 @@
+<div class="container upload-container col-xs-11 col-sm-11 col-md-11 col-lg-10 col-xl-8 bg-light">
+    <form method="POST" 
+
+    action="https://exchangeagram.azurewebsites.net/api/upload" 
+    enctype="multipart/form-data">
+
+    <input type="hidden" name="token" id="token" value="{{ token }}" />
+    <input type="hidden" name="redirect" id="redirect" value="http://127.0.0.1:8080/#!/upload" />
+
+
+        <div class="form-group col-12">
+            <h1 class="upload-title display-4 col-12">Exchange A New Gram</h1>                  
+        </div>
+
+        <div class="form-group col-12">
+            <h6 class="exampleFormControlInput1">Select image:</h6>
+            <input type="file" ng-model="text" name="image" accept="image/*" class="form-control" id="inputGroupFile01">
+        </div>
+
+        <div class="form-group col-12">
+            <h6 class="exampleFormControlInput1">Enter a caption:</h6>
+            <input type="text" ng-model="text" name="caption" class="form-control" id="exampleFormControlInput1" placeholder=" ">
+        </div>
+
+        <div class="row upload-btn">
+            <button class="bg-primary text-light" type="submit">Upload</button>
+        </div>
+
+    </form>
+</div>
+

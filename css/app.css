@@ -1,0 +1,251 @@
+html,body {
+	min-height:100vh;
+}
+
+img {
+	max-width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* start navbar */
+
+.login-button {
+	cursor: pointer;
+}
+
+.nav-item {
+	cursor: pointer;
+}
+
+.main-header-avatar {
+	height: 40px;
+}
+
+/* end navbar */
+
+/* start log in modal */
+
+.login-btn, .delete-btn, .edit-profile-btn {
+	display: flex;
+	justify-content: center;
+}
+
+.delete-btn {
+	margin-top: 15px;
+}
+
+/* end log in modal */
+
+/* start hero image */
+
+.bgimage {
+	width:100%;
+	height:700px;
+	background: linear-gradient(rgba(0, 0, 255, 0.1), rgba(0, 0, 255, 0.1)), url("/images/hero_bg.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size:cover;
+	background-attachment: fixed;
+}
+
+.bgimage h5 {
+	color:white;
+	text-shadow:2px 2px #333;
+}
+
+.hero-image-logo {
+	text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+	width: 800px;
+}
+
+/* end hero image */
+
+/* start about section */
+
+.about-section-title, .about-section-description {
+	margin-right: 0px;
+}
+
+.about-title, .about-description {
+	padding-right: 0;
+    margin-top: 0;  
+    width:100%; 
+	color:#000;
+    text-align: center;
+}
+
+.about-title {
+	padding-top: 30px;
+}
+
+.about-description{
+	line-height: 30px;
+	padding-bottom: 30px;
+}
+
+/* end about section */
+
+
+/* start how it works section */
+
+.circle {
+	background: #fff;
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	
+}
+
+.HIW-section-title {
+	margin-right: 0px;
+}
+
+.HIW-title, .upload-title {
+	padding-top: 30px;
+	padding-right: 0;
+    width:100%; 
+	color:#000;
+    text-align: center;
+}
+
+.HIW-numbers {
+	margin-right: 0;
+}
+
+.HIW {
+	width: 100%;
+}
+
+/* end how it works section */
+
+/* feed start */
+
+.feed-item-avatar {
+	height: 40px;
+}
+
+.feed-items, .profile-items {
+	margin-top: 30px;
+}
+
+.load-more {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.feed-item {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.feed-item-info {
+	padding: 0;
+	line-height: 50px;
+}
+
+.heading, .number-of-likes, .caption {
+	padding-left: 15px;
+}
+
+.bottom-btns {
+	text-align: center;
+}
+
+.comment-btn {
+	margin-left: 15px;
+}
+
+.feed-item-image {
+}
+
+.comment-date {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.comment-comment {
+	margin-top: 0;
+}
+
+.comment-user {
+	margin-bottom: 10px;
+}
+
+.comment-here {
+	margin-top: 30px;
+}
+
+.comment-avatar {
+	height: 25px;
+}
+
+/* end feed item */
+
+/* start upload */
+
+.upload-container {
+	padding-bottom: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.upload-btn {
+	display: flex;
+	justify-content: center;
+}
+
+/* end upload */
+
+/* start profile */
+
+.profile-name-heading {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.edit-profile-btn {
+	height: 30px;
+	border: none;
+}
+
+.profile-content {
+	margin-bottom: 50px;
+}
+
+.profile-bio-heading {
+	font-weight: normal;
+}
+
+.icon, .thumbnail {
+	border-radius: 23px;
+}
+
+/* end profile */
+
+/* start footer  */
+
+.page-footer {
+}
+
+.footer-text {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* end footer */
+
+
+.profile-avatar {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+}

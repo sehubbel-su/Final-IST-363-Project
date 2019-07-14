@@ -1,0 +1,101 @@
+<div class="container feed-item">
+    <div class="row col-12">
+        <img class="embed-responsive-item col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8" src="{{ feedItem.image }}" ng-click="gofeed()" style="cursor:pointer;"/>
+    
+
+        <div class="container feed-item-info border border-secondary col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="heading bg-primary text-light" ng-click="userProfile" style="cursor:pointer;">
+                <img class="feed-item-avatar" src="/images/default_profile.png"/>
+                {{ itemUsername }}
+            </div>
+            <div class="number-of-likes bg-light">
+                {{ itemLikes }} likes
+            </div>
+            <div class="caption" >
+                {{ caption }}
+            </div>
+
+            <div class="bottom-btns">
+                <div class="like-this text-primary" ng-if="!userHasLiked" ng-click="doLike()" style="cursor:pointer;">
+                    Like This Post
+                </div>
+                <div class="like-this text-primary" ng-if="userHasLiked" ng-click="doUnLike()" style="cursor:pointer;">
+                    UnLike This Post
+                </div>
+                <div class="edit-this bg-light" ng-if="$root.token" ng-click="$root.openModal('#modal_edit_post')" style="cursor:pointer;">
+                    Edit Post
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+<div class="modal fade" id="modal_edit_post" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+            <form ng-submit="editCaption(caption)">
+            
+                <div class="form-group col-12 col-md-12 col-lg-12">
+                    <h6 class="exampleFormControlInput1">Caption</h6>
+                    <input type="text" name="caption" ng-model="caption" class="form-control" id="exampleFormControlInput1" placeholder="{{caption}}">
+                </div>
+
+                <div class="row login-btn">
+                    <button class="bg-primary text-light " type="submit" style="cursor:pointer;">Update</button>
+                </div>
+
+                <div class="row delete-btn">
+                    <a class="text-danger" type="delete" style="cursor:pointer;">Delete Forever</a>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="comment-section col-12">
+    <h1 class="comment-heading text-display-4 col-12">
+        Comments:
+    </h1>
+    <br>
+    <div class="comments-section col-12" ng-if="!hasComments">
+        There are currently no comments. Why not add one?
+    </div>
+    
+    <div class="comments-section col-12 border border-secondary" ng-repeat="comment in comments">
+        <p class="comment-date text-secondary">
+            {{ comment.created_at }}
+        </p>
+        <p class="comment-comment">
+            {{ comment.comment }}
+        </p>
+        <div class="comment-user text-primary" ng-click="userProfile()" style="cursor:pointer;">
+            {{ comment.user.username }}
+            <img class="comment-avatar" src="/images/default_profile.png"/>
+        </div>
+    </div>
+  
+
+
+    <div class="row">
+        <div class="avatar-div col-1">
+            <img class="avatar" src="/images/default_profile.png"/>
+        </div>
+        <form class="comment-here col-11" ng-submit="addNewComment(comment)">
+            <div class="input-group mb-3 col col-12">
+                <input type="text" name="comment" ng-model="comment" class="form-control" placeholder="Add new comment" aria-label="Add new comment" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn comment-btn bg-light text-dark" type="submit">Comment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
